@@ -1,0 +1,12 @@
+bool armstrongNumber(int n) {
+        int og=n;
+        int sum=0;
+        while(n>0){
+            int last=n%10;
+            sum+=(last*last*last);
+            n=n/10;
+        }
+        
+        if(sum==og) return true;
+        return false;
+    }
