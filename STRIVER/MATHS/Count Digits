@@ -1,0 +1,1 @@
+int digit=log10(n)+1
