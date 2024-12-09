@@ -1,0 +1,17 @@
+vector<int> lcmAndGcd(int a, int b) {
+        int gcd=0;
+        int t1=a;
+        int t2=b;
+        
+        while(a && b){
+            if(a>b) a=a%b;
+            else b=b%a;
+        }
+        
+        if(a==0) gcd=b;
+        else gcd=a;
+        
+        int lcm= (t1*t2)/gcd;
+        
+        return {lcm,gcd};
+    }
