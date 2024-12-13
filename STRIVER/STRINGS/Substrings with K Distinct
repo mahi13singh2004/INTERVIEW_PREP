@@ -1,0 +1,28 @@
+int find(string &s, int k){
+        map<char,int>mpp;
+        int start=0;
+        int end=0;
+        int cnt=0;
+        
+        while(end<s.size()){
+            mpp[s[end]]++;
+            
+            while(mpp.size() > k){
+                mpp[s[start]]--;
+                if(mpp[s[start]]==0) mpp.erase(s[start]);
+                start++;
+            }
+            
+            if(mpp.size() <= k){
+                cnt+=end-start+1;
+            }
+            
+            end++;
+        }
+        
+        return cnt;
+    }
+  
+    int countSubstr(string& s, int k) {
+        return find(s,k)-find(s,k-1);
+    }
